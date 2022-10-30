@@ -9,7 +9,7 @@
 
 ## Day 03 - `width` and `max-width`
 - The use of `width` together with `max-width`.
-```
+``` css
 .container{
    width: 80%;
    max-width: 800px;
@@ -19,7 +19,7 @@
 
 ## Days 04 - 07 - More about the previous topics
 - The use of `box-sizing: border-box`
-```
+``` css
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -31,7 +31,7 @@
 ## Day 08 - Flexbox, `gap`, `.col + .col`
 ### Flexbox
 - If you want flex items to take up the same width: use `width: 100%`
-```
+``` css
 .col {
   width: 100%;
 }
@@ -41,7 +41,7 @@
 ### Using `gap`
 - `gap` is an easy way to put spaces around flex items.
 - Can be thought of as an alternative of using the `nth child` stuff. 
-```
+``` css
 .col {
     gap: 100px;
 }
@@ -51,10 +51,39 @@
 ### Using `.col + .col`
 - This selects all `col` that are preceded by another `col`.
 - Also an alternative for the `nth child` stuff.
-```
+``` css
 .col + .col {
     margin-left: 30px;
 }
 ```
 - Say we have three `col` again, the code above will only select the second and third `col` because the first column is not preceded by a `col`.
 - Therefore, only the second and third `col` will have a `margin-left` of `30px`.
+
+## Days 09 & 10
+- The use of `justify-content: space-between;` to create space between flex items.
+- By default, `flex` items take up the height of the tallest element in the flex container. So, if you want an `img` to take up the same height as other flex items, do not put it inside a `div`. Otherwise, place it inside a `div`.
+
+- The height of `some-img` will be its actual height.
+``` html
+    <div class="row">
+        <div class="col" id="col-1">...</div>
+        <div class="col" id="col-2">
+            <img src="/some_image.jpg" id="some-img">
+        </div>
+    </div>
+```
+- The height of of `some-img` will adjust according to the height of `col-1`.
+``` html
+    <div class="row">
+        <div class="col" id="col-1">...</div>
+        <img src="/some_image.jpg">
+    </div>
+```
+
+### Using `max-width` for images
+- This is to avoid side scrolling, especially on small screens, wherein the actual `width` of an `img` is greater than the current screen width.
+``` css
+img {
+    max-width: 100%;
+}
+```
