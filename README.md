@@ -87,3 +87,39 @@ img {
     max-width: 100%;
 }
 ```
+## Day 11 - Using flexbox for navigation
+- To align `li` items in a single line, you can simply use `display:flex` on `ul`.
+``` css
+ul {
+  display: flex;
+}
+```
+- This is an alternative for setting `display: inline-block` for each `li`.
+
+## Day 12 - `flex-grow`, `flex-shrink`, and `auto` margin
+### Using `auto` on `margin
+- Using `margin-right: auto` on one of the `nav__item` in `nav__list--primary` will push `nav__list--secondary` to the right of the container.
+```html
+<nav>
+  <ul class="nav__list nav__list--primary">
+      <li class="nav__item"><a href="" class="nav__link">Home</a></li>
+      <li class="nav__item"><a href="" class="nav__link">About</a></li>
+      <li class="nav__item nav__item--push-right"><a href="" class="nav__link">Contact</a></li>
+  </ul>
+  <ul class="nav__list nav__list--secondary">
+    <li class="nav__item"><a href="" class="nav__link">Sign in</a></li>
+    <li class="nav__item"><a href="" class="nav__link nav__link--button">Sign up</a></li>
+  </ul>
+</nav>
+```
+```css
+.nav__item--push-right{
+    margin-right: auto;
+}
+```
+- Using `margin: 0 auto` will horizontally center elements.
+```css
+.nav__list--primary{
+    margin: 0 auto;
+}
+```
