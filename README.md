@@ -151,3 +151,9 @@ ul {
 ### Breakpoints
 - [The 100% correct way to do CSS breakpoints by Freecodecamp.](https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/) 
 - The tl;dr of the article: Use `600px`, `900px`, `1200px`, and `1800px` if you plan on giving the giant-monitor people something special. 
+
+## Day 17 - The `meta` `viewport` tag
+- Should be present in your `HTML` code for the media queries to work.
+``` html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
