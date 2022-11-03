@@ -123,3 +123,31 @@ ul {
     margin: 0 auto;
 }
 ```
+
+## Day 15 - Media Queries
+- The use of `min-width` and `max-width`.
+### Switching from `display:flex` to `display:block`
+- One way to make things to just stack up on smaller screens especially `flex` items that are originally divided into columns on larger screens.
+- Better approach instead of changing from `flex-direction: row` to `flex-direction:column`.
+- Just make sure that you set the `width` of the elements to `100%`.
+``` css
+@media(max-width: 600px){
+
+    .row{
+        display: block;
+    }
+
+    .hero__text,
+    .hero__img,
+    .left-text,
+    .right-text{
+        width: 100%;
+    }
+}
+```
+- In the code above, `hero__text`, `hero__img`, `left-text`, and `right-text` are all originally `flex` items. However, since `row` has been set to `display:block`, they become block-level elements on `600px` screens.
+- Their `width` has been set to `100%` because on larger screens, a different `width` that is only compatible for `display:flex` has also been set. 
+
+### Breakpoints
+- [The 100% correct way to do CSS breakpoints by Freecodecamp.](https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/) 
+- The tl;dr of the article: Use `600px`, `900px`, `1200px`, and `1800px` if you plan on giving the giant-monitor people something special. 
